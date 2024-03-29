@@ -1,0 +1,22 @@
+extends layout
+block content
+    div(class="container-fluid")
+        h1= title
+    - let results=[{cat_color:"brown",cat_breed:"Abyssinian",cat_price:2500},{cat_color:"white",cat_breed:"Ragdoll",cat_price:6500},{cat_color:"black",cat_breed:"British Shorthair",cat_price:7000}]
+        div(class="row")
+            each form,item in results
+                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_color}              
+                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_breed}                
+                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_price}
+                hr
+    h5= 'buy'
+
+    div(class="container-fluid")
+      each cat,index in results
+        div(class="row", onclick=`buy(${index})`)
+          div(class="col-sm-2") <br>cat #{index}: #{cat.cat_color} <br>breed:#{cat.cat_breed} <br>price:#{cat.cat_price}
+    script.
+        function buy(itemNo)
+        {
+            alert(`You purchased Item ${itemNo+1}`)
+        }

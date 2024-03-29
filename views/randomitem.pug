@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+ h1 A random item
+ p
+  - var image_names=[ "cat1.jpeg","cat2.jpeg","cat3.jpeg","cat4.jpeg","cat5.jpg"]
+    - for(let i=0; i<3; i++)
+      -let randomitem= Math.floor(Math.random()*5)
+       img(src=`/images/${image_names[randomitem]}` alt=image_names[randomitem] height="300" width="300")
+      

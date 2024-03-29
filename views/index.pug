@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Sai Swetha Bodlapati
+  p I like Coffee.
+  button(type="button", class="btn btn-secondary")  I am a button
+  div#double Up the amount.
+  button(type="button" ,class="btn btn-primary" onclick="double()") Double
+
+  script.
+ 
+    var value = 0;
+    var power = 1;
+ 
+    function double() {
+      value += 1;
+      power *= 2;
+      document.getElementById("double").innerText = "Two to the power " + value + " is " + power;
+    }
+
+
+  
