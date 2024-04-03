@@ -32,9 +32,9 @@ exports.cat_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: cat detail: ' + req.params.id);
 };
 // Handle Costume create on POST.
-exports.cat_create_post = function(req, res) {
-res.send('NOT IMPLEMENTED: cat create POST');
-};
+// exports.cat_create_post = function(req, res) {
+// res.send('NOT IMPLEMENTED: cat create POST');
+// };
 // Handle Costume delete from on DELETE.
 exports.cat_delete = function(req, res) {
 res.send('NOT IMPLEMENTED: cat delete DELETE ' + req.params.id);
