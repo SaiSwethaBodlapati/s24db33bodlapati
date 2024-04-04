@@ -1,8 +1,15 @@
 extends layout
 
 block content
-    h1=title 
-    - let items= results;
+    h1= title
+    div(class="container-fluid")
+        - let items = results
+        div(class="row")
+            each form, item in items
+                div(class="col-sm-2 bg-primary" onclick=`buy('${item}')`) #{form.cat_color}              
+                div(class="col-sm-2 bg-primary" onclick=`buy('${item}')`) #{form.cat_breed}                
+                div(class="col-sm-2 bg-primary" onclick=`buy('${item}')`) #{form.cat_price}
+                hr
     - let o;
     script.
         function buy(itemNo)
@@ -11,14 +18,19 @@ block content
         }
 
 
-    div(class="container-fluid")
+
+    //- div(class="container-fluid")
         
-    - let result=[{cat_color:"brown",cat_breed:"Abyssinian",cat_price:2500},{cat_color:"white",cat_breed:"Ragdoll",cat_price:6500},{cat_color:"black",cat_breed:"British Shorthair",cat_price:7000}]
-        div(class="row")
-            each form,item in result
-                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_color}              
-                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_breed}                
-                div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_price}
-                hr
+    //- - let result=[{cat_color:"brown",cat_breed:"Abyssinian",cat_price:2500},{cat_color:"white",cat_breed:"Ragdoll",cat_price:6500},{cat_color:"black",cat_breed:"British Shorthair",cat_price:7000}]
+    //-     div(class="row")
+    //-         each item in result
+    //-             each form,item in result
+    //-             div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_color}              
+    //-             div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_breed}                
+    //-             div(class = "col-sm-2 " onclick=`buy(${item})`) #{form.cat_price}
+    //-             hr
+
+
+                
     
     

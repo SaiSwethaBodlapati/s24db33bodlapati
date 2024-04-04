@@ -41,8 +41,10 @@ res.send('NOT IMPLEMENTED: cat delete DELETE ' + req.params.id);
 };
 // Handle Costume update form on PUT.
 exports.cat_update_put = function(req, res) {
-res.send('NOT IMPLEMENTED: cat update PUT' + req.params.id);
-};
+    res.send('NOT IMPLEMENTED: cat update PUT' + req.params.id);
+    };
+
+
 
 // VIEWS
 // Handle Costume create on POST.
