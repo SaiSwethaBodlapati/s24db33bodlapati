@@ -12,4 +12,8 @@ var router = express.Router();
 
 router.get('/', costume_controller.cat_view_all_Page );
 
+/* GET detail costume page */
+router.get('/detail', costume_controller.cat_view_one_Page);
+/* GET create costume page */
+router.get('/create', costume_controller.cat_create_Page);
 module.exports = router;
