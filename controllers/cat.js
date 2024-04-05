@@ -45,9 +45,19 @@ res.send(`{"error": document for id ${req.params.id} not found`);
 // res.send('NOT IMPLEMENTED: cat create POST');
 // };
 // Handle Costume delete from on DELETE.
-exports.cat_delete = function(req, res) {
-res.send('NOT IMPLEMENTED: cat delete DELETE ' + req.params.id);
-};
+// Handle Costume delete on DELETE.
+exports.cat_delete = async function(req, res) {
+    console.log("delete " + req.params.id)
+    try {
+    result = await cat.findByIdAndDelete( req.params.id)
+    console.log("Removed " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": Error deleting ${err}}`);
+    }
+    };
+    
 // Handle Costume update form on PUT.
 //Handle Costume update form on PUT.
 exports.cat_update_put = async function(req, res) {
