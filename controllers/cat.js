@@ -70,10 +70,9 @@ exports.cat_update_put = async function(req, res) {
     try {
     let toUpdate = await cat.findById( req.params.id);
     // Do updates of properties
-    if(req.body.cat_color)
-    toUpdate.cat_color = req.body.cat_color;
+    if(req.body.cat_color) toUpdate.cat_color = req.body.cat_color;
     if(req.body.cat_breed) toUpdate.cat_breed = req.body.cat_breed;
-    if(req.body.cat_price) toUpdate.cat_breed = req.body.cat_price;
+    if(req.body.cat_price) toUpdate.cat_price = req.body.cat_price;
     let result = await toUpdate.save();
     console.log("Sucess " + result)
     res.send(result)
