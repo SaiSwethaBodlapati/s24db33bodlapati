@@ -19,6 +19,8 @@ router.get('/create', costume_controller.cat_create_Page);
 /* GET create update page */
 router.get('/update', costume_controller.cat_update_Page);
 
+/* GET delete cat page */
+router.get('/delete',costume_controller.cat_delete_Page);
 
 module.exports = router;
 
