@@ -1,20 +1,23 @@
 extends layout
+
 block content
-  h1= title
-  - let catid = toShow._id
-  - let cat_color = toShow.cat_color
-  - let cat_breed = toShow.cat_breed
-  - let cat_price = toShow.cat_price
-  div
-    div.row
-      div(class='costumeAttr mr-3') Cat ID is:
-      div #{catid}
-    div.row
-      div(class='costumeAttr mr-3') Cat Color is:
-      div #{cat_color}
-    div.row
-      div(class='costumeAttr mr-3') Cat Breed is:
-      div #{cat_breed}
-    div.row
-      div(class='costumeAttr mr-3') Cat Price is:
-      div #{cat_price}
+  - if (toShow != null)
+    h1(class='detailh1')= title
+
+    - let catid = toShow._id
+    - let cat_color = toShow.cat_color
+    - let cat_breed = toShow.cat_breed
+    - let cat_price = toShow.cat_price 
+
+    div
+      div.row
+        div(class='catAttr') cat ID is: #{catid} 
+      div.row
+        div(class='catAttr') cat color is: #{cat_color}
+      div.row
+        div(class='catAttr') cat breed is: #{cat_breed} 
+      div.row
+        div(class='catAttr') cat price is: #{cat_price}
+  - else
+    h1 Cat Details
+    h2 No instance to detail
