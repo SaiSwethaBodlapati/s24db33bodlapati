@@ -10,18 +10,18 @@ block content
       alert('purchased item ' + x)
    } 
   div(class='container-fluid')
-    //a(class="btn btn-info" href="/cat/create") Create
+    a(class="btn btn-info" href="/cat/create") Create
     div(class='row m-1')
     div(class="row row-cols-1 row-cols-sm-4 g-6")
       each item,index in items
         - let destination = `dispatch(\"/cat/update?id=${item._id}\")`
-        //- let details = `dispatch(\"/cat/detail?id=${item._id}\")` 
+        - let details = `dispatch(\"/cat/detail?id=${item._id}\")` 
       
         div(class="catd text-black mb-3" class='col' class='catd' class='catd-body' class='catd-text' onclick='buy('+index+')') Item color is #{item.cat_color}(Item breed is #{item.cat_breed})price is #{item.cat_price} 
           <br><br>
-          //span(class="btn btn-secondary", onclick= details) Details
+          span(class="btn btn-secondary", onclick= details) Details
           <br>
-          //a(class="btn btn-danger", href="/cat/delete/?id="+item._id) Delete
+          a(class="btn btn-danger", href="/cat/delete/?id="+item._id) Delete
           <br>
           button.btn( class="btn-success ml-1", onclick= destination) Update
 
