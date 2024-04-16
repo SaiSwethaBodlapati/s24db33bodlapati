@@ -26,10 +26,23 @@ passport.use(new LocalStrategy(
 ));
 
 require('dotenv').config();
-const connectionString = process.env.MONGO_CON;
+const connectionString = process.env.MONGO_CON
 const mongoose = require('mongoose');
 mongoose.connect(connectionString);
+if (!connectionString) {
+  console.error('MongoDB connection string is not defined in environment variables.');
+  process.exit(1); // Exit the process with an error code
+}
 
+// Connect to MongoDB
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch(error => {
+    console.error('Error connecting to MongoDB:', error);
+    process.exit(1); // Exit the process with an error code
+  });
 // Get the default connection
 var db = mongoose.connection;
 // Bind connection to error event
