@@ -26,7 +26,7 @@ passport.use(new LocalStrategy(
 ));
 
 require('dotenv').config();
-const connectionString = process.env.MONGO_CON
+const connectionString = process.env.MONGO_CON || 'mongodb+srv://Swetha:Swetha123@cluster0.jsars8k.mongodb.net/?retryWrites=true&w=majority';
 const mongoose = require('mongoose');
 mongoose.connect(connectionString);
 
