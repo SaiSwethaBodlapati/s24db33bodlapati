@@ -8,6 +8,4 @@ router.get('/', function(req, res, next) {
     console.log(`cols ${query.cols}`);
   res.render('grid', { title: 'Grid Display' ,query:query});
 });
-
 module.exports = router;
-
