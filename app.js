@@ -27,7 +27,7 @@ passport.use(new LocalStrategy(
 
 require('dotenv').config();
 const connectionString = process.env.MONGO_CON;
-mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect(connectionString);
 
 // Get the default connection
